@@ -1,0 +1,5 @@
+SMILES,Atoms,Edges,Predicted_ESOL
+CCO,3,4,-0.0820
+CC,2,2,0.1482
+CC(=O)O,4,6,-1.0142
+c1ccccc1,6,12,1.0175

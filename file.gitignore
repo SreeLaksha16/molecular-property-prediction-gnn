@@ -1,0 +1,21 @@
+# Virtual environment
+venv/
+
+# Python
+__pycache__/
+*.pyc
+
+# Model files
+*.pth
+
+# Streamlit
+.streamlit/
+
+# Images
+*.png
+
+# VS Code
+.vscode/
+
+# Jupyter
+.ipynb_checkpoints/

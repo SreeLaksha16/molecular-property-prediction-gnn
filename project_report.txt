@@ -1,0 +1,243 @@
+========================================
+MOLECULAR SOLUBILITY PREDICTION USING GNN
+========================================
+
+PROJECT SUMMARY
+----------------
+
+This project uses a Graph Neural Network (GNN) to predict
+molecular solubility using the ESOL dataset.
+
+The project converts molecular SMILES strings into molecular
+graphs using RDKit and processes those graphs using
+PyTorch Geometric.
+
+
+1. SOFTWARE ENVIRONMENT
+-----------------------
+
+Python: 3.11.8
+
+PyTorch: 2.13.0+cpu
+
+PyTorch Geometric: 2.8.0.post1
+
+RDKit: 2026.3.5
+
+The model was trained using CPU.
+
+
+2. DATASET
+----------
+
+Dataset: ESOL
+
+Total molecules: 1128
+
+Training molecules: 902
+
+Validation molecules: 112
+
+Test molecules: 114
+
+
+3. MOLECULAR GRAPH REPRESENTATION
+----------------------------------
+
+Each molecule is represented as a graph.
+
+Atoms are represented as nodes.
+
+Chemical bonds are represented as edges.
+
+The graph contains node features and edge features.
+
+Example:
+
+SMILES:
+CCO
+
+Number of atoms:
+3
+
+Number of edges:
+4
+
+The two directions of each chemical bond are stored as
+graph edges.
+
+
+4. GRAPH NEURAL NETWORK
+-----------------------
+
+The molecular GNN contains three GCN layers.
+
+Architecture:
+
+GCNConv(9, 64)
+GCNConv(64, 64)
+GCNConv(64, 64)
+
+Global mean pooling
+
+Linear(64, 32)
+
+Linear(32, 1)
+
+The final output is the predicted ESOL value.
+
+
+5. TRAINING
+-----------
+
+The model was trained for 50 epochs.
+
+The training loss decreased during training.
+
+At epoch 50:
+
+Training Loss: 1.7518
+Validation Loss: 1.8960
+
+The trained model was saved as:
+
+molecular_gnn_model.pth
+
+
+6. MODEL EVALUATION
+-------------------
+
+The trained model was evaluated using the test dataset.
+
+Test MSE:
+1.5922
+
+Test RMSE:
+1.2618
+
+Test MAE:
+0.9789
+
+
+7. EXAMPLE TEST PREDICTIONS
+---------------------------
+
+Molecule 01
+Actual: -3.190
+Predicted: -4.100
+
+Molecule 02
+Actual: -1.850
+Predicted: -1.656
+
+Molecule 03
+Actual: -1.590
+Predicted: -1.348
+
+Molecule 04
+Actual: -2.680
+Predicted: -0.543
+
+Molecule 05
+Actual: -3.800
+Predicted: -3.156
+
+Molecule 06
+Actual: -2.369
+Predicted: -2.465
+
+Molecule 07
+Actual: -2.680
+Predicted: -4.794
+
+Molecule 08
+Actual: -2.390
+Predicted: -2.359
+
+Molecule 09
+Actual: 0.320
+Predicted: 0.278
+
+Molecule 10
+Actual: -1.990
+Predicted: -0.620
+
+
+8. NEW MOLECULE PREDICTION
+--------------------------
+
+The trained model can accept a new SMILES string and predict
+its ESOL value.
+
+Example predictions:
+
+CCO
+Predicted ESOL: -0.0820
+
+CC
+Predicted ESOL: 0.1482
+
+CC(=O)O
+Predicted ESOL: -1.0142
+
+c1ccccc1
+Predicted ESOL: 1.0175
+
+
+9. BATCH PREDICTION
+-------------------
+
+The batch prediction system accepts multiple SMILES strings
+and produces predictions for each molecule.
+
+The results are saved to:
+
+batch_predictions.csv
+
+
+10. OUTPUT FILES
+----------------
+
+molecular_gnn_model.pth
+    Trained GNN model.
+
+test_predictions.csv
+    Test-set predictions.
+
+test_predictions.pt
+    PyTorch prediction results.
+
+batch_predictions.csv
+    Predictions for new molecules.
+
+
+11. CONCLUSION
+--------------
+
+A Graph Neural Network was successfully developed for
+molecular ESOL prediction.
+
+The project demonstrates the complete workflow:
+
+SMILES
+  ->
+Molecular graph
+  ->
+Node and edge features
+  ->
+Graph Neural Network
+  ->
+Training
+  ->
+Validation
+  ->
+Testing
+  ->
+ESOL prediction
+
+The trained model can also be used to predict the ESOL value
+of new molecules supplied as SMILES strings.
+
+========================================
+END OF PROJECT REPORT
+========================================
