@@ -295,7 +295,7 @@ This project can be applied in:
 
 ## Author
 
-Your Name
+Sree Laksha S V
 
 Graph Neural Networks for Molecular Property Prediction
 
