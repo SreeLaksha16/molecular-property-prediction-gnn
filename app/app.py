@@ -8,7 +8,7 @@ from torch_geometric.data import Data
 from torch_geometric.nn import GATConv, global_mean_pool
 
 from rdkit import Chem
-from rdkit.Chem import Draw
+#from rdkit.Chem import Draw
 
 
 # ============================================================
@@ -612,20 +612,12 @@ if predict_button:
                     # ============================================
 
                     st.subheader(
-                        "🧬 Molecular Structure"
-                    )
+                    "🧬 Molecular Structure"
+                     )
 
-                    image = Draw.MolToImage(
-                        mol,
-                        size=(500, 400)
-                    )
-
-                    st.image(
-                        image,
-                        caption=(
-                            f"Molecular structure: "
-                            f"{smiles}"
-                        )
+                    st.info(
+                   "Molecule visualization is disabled in "
+                    "the cloud deployment."
                     )
 
                     # ============================================
